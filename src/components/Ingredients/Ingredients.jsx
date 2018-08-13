@@ -6,26 +6,14 @@ class Ingredients extends React.Component {
 		return <div className={styles.ingredients_list}>
 			<p>Ingredients</p>
 			<div className={styles.list}>
-				<div className={styles.ingredient}>
-					<p>meat</p>
-					<p className={styles.price}>140$</p>
-				</div>
-				<div className={styles.ingredient}>
-					<p>cabbage</p>
-					<p className={styles.price}>150$</p>
-				</div>
-				<div className={styles.ingredient}>
-					<p>tomato</p>
-					<p className={styles.price}>110$</p>
-				</div>
-				<div className={styles.ingredient}>
-					<p>cucumber</p>
-					<p className={styles.price}>190$</p>
-				</div>
-				<div className={styles.ingredient}>
-					<p>bow</p>
-					<p className={styles.price}>10$</p>
-				</div>
+				{
+					this.props.ingredients !== undefined ? this.props.ingredients.map((ingredient, i) => {
+						return <div key={i} className={styles.ingredient}>
+							<p>{ingredient.name}</p>
+							<p className={styles.price}>{ingredient.price}$</p>
+						</div>
+					}) : ''
+				}
 			</div>
 		</div>
 	}

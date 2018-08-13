@@ -4,7 +4,10 @@ import styles from './Card.scss';
 class Card extends React.Component {
 	render() {
 		return <div className={styles.card}>
-			<div className={styles.burder_img}>
+			<div className={styles.burger_img}>
+				<div className={styles.edit}>
+		    		<button>Detailed view</button>
+		    	</div>
 				<img src={require('../../images/burger.png')} alt='' />
 			</div>
 			<div className={styles.main_info}>
