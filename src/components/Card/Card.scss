@@ -1,3 +1,20 @@
 .card {
-	color: red;
+	color: black;
+	border: 1px solid black;
+	border-radius: 8px;
+	padding: 10px;
+	.name {
+		display: flex;
+	}
+	.ingredients {
+		display: flex;
+	}
+	.price {
+		display: flex;
+	}
+	.burder_img {
+		img {
+			width: 100%;
+		}
+	}
 }

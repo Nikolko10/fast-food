@@ -1,0 +1,14 @@
+.ingredients_list {
+	padding: 10px;
+	p {
+		text-align: center;
+	}
+	.list {
+		.ingredient {
+			display: flex;
+		}
+		p {
+			text-align: left;
+		}
+	}
+}
