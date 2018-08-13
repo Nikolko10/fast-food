@@ -4,17 +4,23 @@ import styles from './Burgers.scss';
 import Card from '../Card/Card';
 
 class Burgers extends React.Component {
+	sumPrice = (ingredients) => {
+		var price = 0;
+		ingredients.forEach((item) => {
+			price += +item.price;
+		})
+		return price;
+	}
+
 	render() {
 		return <Fragment>
-			<Col xs={12} md={6} lg={3}>
-    			<Card />
-    		</Col>
-    		<Col xs={6} md={6} lg={3}>
-    			<Card />
-    		</Col>
-    		<Col xs={6} md={6} lg={3}>
-    			<Card />
-    		</Col>
+		    {
+		    	this.props.burgers.map((burger, i) => {
+		    		return <Col key={i} lg={3}>
+		    			<Card name={burger.name} ingredients={burger.ingredients} price={this.sumPrice(burger.ingredients)} />
+		    		</Col>
+		    	})
+		    }
 		</Fragment>
 	}
 }

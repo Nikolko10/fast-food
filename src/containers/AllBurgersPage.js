@@ -13,7 +13,7 @@ class AllBurgersPage extends Component {
 
 	render() {
 		const { all_burgers, ingredients } = this.props;
-        console.log('1');
+		
 		return <div style={{'display': 'flex'}} className="App">
         <div style={{'width': '20%'}}>
           <Ingredients ingredients={ingredients} />

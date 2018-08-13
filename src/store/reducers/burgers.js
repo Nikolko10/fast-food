@@ -1,6 +1,15 @@
 var initialState = {
 	ingredients: [],
-	all_burgers: [],
+	all_burgers: [
+		{
+			id: '',
+			name: '',
+			ingredients: [{
+				name: '',
+				price: '',
+			}],
+		}
+	],
 };
 
 const Burgers = (state = initialState, action) => {

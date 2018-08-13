@@ -24,18 +24,26 @@ var data = {
 	],
 	all_burgers: [
 		{
-			burder: {
-				id: 1,
-				name: 'First butger',
-				ingredients: ['meat', 'cabbage', 'tomato', 'cucumber', 'bow'],
-			}
+			id: 1,
+			name: 'First butger',
+			ingredients: [{
+				name: 'meat',
+				price: '10',
+			},{
+				name: 'cabbage',
+				price: '20',
+			}],
 		},
 		{
-			burder: {
-				id: 2,
-				name: 'Last butger',
-				ingredients: ['meat', 'cabbage', 'tomato', 'cucumber', 'bow'],
-			}
+			id: 2,
+			name: 'Last butger',
+			ingredients: [{
+				name: 'meat',
+				price: '10',
+			},{
+				name: 'cabbage',
+				price: '20',
+			}],
 		},
 	]
 };

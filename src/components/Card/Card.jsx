@@ -13,22 +13,22 @@ class Card extends React.Component {
 			<div className={styles.main_info}>
 				<div className={styles.name}>
 					<p>Name: </p>
-					<p>Burder first</p>
+					<p>{this.props.name}</p>
 				</div>
 				<div className={styles.ingredients}>
 					<p>Ingredients: </p>
 					<div className={styles.list}>
-						<p>meat</p>
-						<p>cabbage</p>
-						<p>tomato</p>
-						<p>cucumber</p>
-						<p>bow</p>
+						{
+							this.props.ingredients !== undefined ? this.props.ingredients.map((ingredient, i) => {
+								return <p key={i}>{ingredient.name}</p>
+							}) : ''
+						}
 					</div>
 				</div>
 			</div>
 			<div className={styles.price}>
 				<p>Prise: </p>
-				<p>127$</p>
+				<p>{this.props.price}$</p>
 			</div>
 		</div>
 	}
