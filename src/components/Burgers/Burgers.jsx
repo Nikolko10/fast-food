@@ -23,6 +23,8 @@ class Burgers extends React.Component {
 		    				price={this.sumPrice(burger.ingredients)}
 		    				id={burger.id}
 		    				addIngredient={this.props.addIngredient}
+		    				saveNameBurger={this.props.saveNameBurger}
+		    				deleteIngFromBurger={this.props.deleteIngFromBurger}
 		    			/>
 		    		</Col>
 		    	})

@@ -30,9 +30,11 @@ var data = {
 			ingredients: [{
 				name: 'meat',
 				price: 10,
+				id: uniqid(),
 			},{
 				name: 'cabbage',
 				price: 20,
+				id: uniqid(),
 			}],
 		},
 		{
@@ -41,12 +43,15 @@ var data = {
 			ingredients: [{
 				name: 'meat',
 				price: 10,
+				id: uniqid(),
 			},{
 				name: 'cabbage',
 				price: 20,
+				id: uniqid(),
 			},{
 				name: 'cucumber',
 				price: 3,
+				id: uniqid(),
 			}],
 		},
 	]

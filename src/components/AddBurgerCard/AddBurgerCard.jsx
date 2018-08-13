@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './Card.scss';
+import styles from './AddBurgerCard.scss';
 import cn from 'classnames';
 
-class Card extends React.Component {
+class AddBurgerCard extends React.Component {
 	state = {
 		isAdd: false,
 	}
@@ -12,17 +12,17 @@ class Card extends React.Component {
 			isAdd: !this.state.isAdd,
 		}, () => {
 			if (this.state.isAdd) return false;
+			// for (var i = 0; i < this.props.ingredients.length; i++) {
+			// 		if (this.props.ingredients[i].name === this.input.value) {
+			// 			console.log(this.props.ingredients[i].name, this.input.value);
+			// 			alert('We have not this ingredient');
+			// 			this.input.value = '';
+			// 			return false;
+			// 		}
+			// 	}
 			this.props.addIngredient(id, this.input.value);
 			this.input.value = '';
 		});
-	}
-
-	handleSave = (id) => {
-		this.props.saveNameBurger(id, this.name.value);
-	}
-
-	handleDeleteIngFromBurger = (ingId, burId) => {
-		this.props.deleteIngFromBurger(ingId, burId);
 	}
 
 	render() {
@@ -36,22 +36,14 @@ class Card extends React.Component {
 			<div className={styles.main_info}>
 				<div className={styles.name}>
 					<p>Name: </p>
-					<div>{this.props.name === '' ? 
-					<div className={styles.save}>
-						<input type='text' ref={(node) => this.name = node} />
-						<button onClick={() => this.handleSave(this.props.id)}>Save</button>
-					</div> : 
-					this.props.name}</div>
+					<p>{this.props.name}</p>
 				</div>
 				<div className={styles.ingredients}>
 					<p>Ingredients: </p>
 					<div className={styles.list}>
 						{
 							this.props.ingredients !== undefined ? this.props.ingredients.map((ingredient, i) => {
-								return <div key={i} className={styles.wrapper_ingredient}>
-									<p>{ingredient.name}</p>
-									<button onClick={() => this.handleDeleteIngFromBurger(ingredient.id, this.props.id)}>Delete</button>
-								</div>
+								return <p key={i}>{ingredient.name}</p>
 							}) : ''
 						}
 					<div className={styles.add}>
@@ -71,4 +63,4 @@ class Card extends React.Component {
 	}
 }
 
-export default Card;
+export default AddBurgerCard;

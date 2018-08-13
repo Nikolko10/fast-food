@@ -17,12 +17,24 @@ var initialState = {
 const Burgers = (state = initialState, action) => {
   switch (action.type) {
     case 'GET_DATA':
-      return action.payload
+      return {
+      	...action.payload
+      }
     case 'ADD_SOME_INGREDIENT':
-    	setData(JSON.stringify({
-      		...state,
-      		all_burgers: action.payload,
-      	}));
+      return {
+      	...state,
+      	all_burgers: action.payload,
+      }
+    case 'ADD_CARD_BURGER':
+      return {
+      	...action.payload
+      };
+    case 'SAVE_NAME_BURGER':
+    	return {
+    		...state,
+    		all_burgers: action.payload,
+    	}
+    case 'DELETE_SOME_INGREDIENT':
       return {
       	...state,
       	all_burgers: action.payload,

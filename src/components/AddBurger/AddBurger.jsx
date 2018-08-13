@@ -4,8 +4,14 @@ import styles from './AddBurger.scss';
 import Card from '../Card/Card';
 
 class AddBurger extends React.Component {
+
+	handleAdd = () => {
+		console.log('add');
+		this.props.addBurgerCard();
+	}
+
 	render() {
-		return <div> + </div>
+		return <div onClick={this.handleAdd} className={styles.add}> + </div>
 	}
 }
 

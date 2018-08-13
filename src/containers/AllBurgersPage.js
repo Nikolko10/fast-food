@@ -6,7 +6,10 @@ import Ingredients from '../components/Ingredients/Ingredients';
 import { Grid, Row, Col, Clearfix } from 'react-bootstrap';
 import { 
 	getDataForAll,
-	addIngredient, 
+	addIngredient,
+	addBurgerCard,
+	saveNameBurger,
+	deleteIngFromBurger,
 } from '../store/actions/dataBurgers';
 
 class AllBurgersPage extends Component {
@@ -19,8 +22,11 @@ class AllBurgersPage extends Component {
 			all_burgers, 
 			ingredients,
 			addIngredient,
+			addBurgerCard,
+			saveNameBurger,
+			deleteIngFromBurger,
 		} = this.props;
-
+        console.log(all_burgers);
 		return <div style={{'display': 'flex'}} className="App">
         <div style={{'width': '20%'}}>
           <Ingredients ingredients={ingredients} />
@@ -31,9 +37,11 @@ class AllBurgersPage extends Component {
       	    	burgers={all_burgers} 
       	    	ingredients={ingredients}
       	    	addIngredient={addIngredient}
+      	    	saveNameBurger={saveNameBurger}
+      	    	deleteIngFromBurger={deleteIngFromBurger}
       	    />
       	    <Col xs={6} md={6} lg={3}>
-      	      <AddBurger />
+      	      <AddBurger addBurgerCard={addBurgerCard} />
       	    </Col>
       	  </Grid>
       	</div>
@@ -56,6 +64,9 @@ const mapDispatchToProps = dispatch => {
 			}, 1500)
 		},
 		addIngredient: (id, text) => dispatch(addIngredient(id, text)),
+		addBurgerCard: () => dispatch(addBurgerCard()),
+		saveNameBurger: (id, text) => dispatch(saveNameBurger(id, text)),
+		deleteIngFromBurger: (ingId, burId) => dispatch(deleteIngFromBurger(ingId, burId)),
 	}
 };
 
