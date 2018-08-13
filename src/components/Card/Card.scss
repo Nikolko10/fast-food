@@ -11,6 +11,16 @@
 		}
 		.ingredients {
 			display: flex;
+			.add {
+				.edding {
+					overflow: hidden;
+					height: 0;
+					transition: height .3s;
+					&.active {
+						height: 26px;
+					}
+				}
+			}
 		}
 	}
 	.price {

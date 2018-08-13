@@ -1,9 +1,32 @@
 import React from 'react';
 import styles from './Card.scss';
+import cn from 'classnames';
 
 class Card extends React.Component {
+	state = {
+		isAdd: false,
+	}
+
+	handleAdd = (id) => {
+		this.setState({
+			isAdd: !this.state.isAdd,
+		}, () => {
+			if (this.state.isAdd) return false;
+			// for (var i = 0; i < this.props.ingredients.length; i++) {
+			// 		if (this.props.ingredients[i].name === this.input.value) {
+			// 			console.log(this.props.ingredients[i].name, this.input.value);
+			// 			alert('We have not this ingredient');
+			// 			this.input.value = '';
+			// 			return false;
+			// 		}
+			// 	}
+			this.props.addIngredient(id, this.input.value);
+			this.input.value = '';
+		});
+	}
+
 	render() {
-		return <div className={styles.card}>
+		return <div className={styles.card} id={this.props.id}>
 			<div className={styles.burger_img}>
 				<div className={styles.edit}>
 		    		<button>Detailed view</button>
@@ -23,6 +46,12 @@ class Card extends React.Component {
 								return <p key={i}>{ingredient.name}</p>
 							}) : ''
 						}
+					<div className={styles.add}>
+						<div className={this.state.isAdd ? cn(styles.edding, styles.active) : styles.edding}>
+							<input type='text' ref={(node) => this.input = node} placeholder='Enter some ingredient' />
+						</div>
+						<button onClick={(e) => this.handleAdd(this.props.id)}>{this.state.isAdd ? 'Add' : 'Add some ingredient'}</button>
+					</div>
 					</div>
 				</div>
 			</div>

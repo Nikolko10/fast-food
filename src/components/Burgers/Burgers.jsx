@@ -16,8 +16,14 @@ class Burgers extends React.Component {
 		return <Fragment>
 		    {
 		    	this.props.burgers.map((burger, i) => {
-		    		return <Col key={i} lg={3}>
-		    			<Card name={burger.name} ingredients={burger.ingredients} price={this.sumPrice(burger.ingredients)} />
+		    		return <Col key={burger.id} lg={3}>
+		    			<Card 
+		    				name={burger.name} 
+		    				ingredients={burger.ingredients} 
+		    				price={this.sumPrice(burger.ingredients)}
+		    				id={burger.id}
+		    				addIngredient={this.props.addIngredient}
+		    			/>
 		    		</Col>
 		    	})
 		    }

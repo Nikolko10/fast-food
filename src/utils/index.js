@@ -1,4 +1,5 @@
 // var ingredients = ['meat', 'cabbage', 'tomato', 'cucumber', 'bow'];
+var uniqid = require('uniqid');
 
 var data = {
 	ingredients: [
@@ -24,25 +25,28 @@ var data = {
 	],
 	all_burgers: [
 		{
-			id: 1,
+			id: uniqid(),
 			name: 'First butger',
 			ingredients: [{
 				name: 'meat',
-				price: '10',
+				price: 10,
 			},{
 				name: 'cabbage',
-				price: '20',
+				price: 20,
 			}],
 		},
 		{
-			id: 2,
+			id: uniqid(),
 			name: 'Last butger',
 			ingredients: [{
 				name: 'meat',
-				price: '10',
+				price: 10,
 			},{
 				name: 'cabbage',
-				price: '20',
+				price: 20,
+			},{
+				name: 'cucumber',
+				price: 3,
 			}],
 		},
 	]
