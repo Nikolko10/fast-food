@@ -25,6 +25,7 @@ class Burgers extends React.Component {
 		    				addIngredient={this.props.addIngredient}
 		    				saveNameBurger={this.props.saveNameBurger}
 		    				deleteIngFromBurger={this.props.deleteIngFromBurger}
+		    				deleteBurger={this.props.deleteBurger}
 		    			/>
 		    		</Col>
 		    	})

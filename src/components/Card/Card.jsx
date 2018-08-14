@@ -25,11 +25,16 @@ class Card extends React.Component {
 		this.props.deleteIngFromBurger(ingId, burId);
 	}
 
+	handleDeleteBurger = (id) => {
+		this.props.deleteBurger(id);
+	}
+
 	render() {
 		return <div className={styles.card} id={this.props.id}>
 			<div className={styles.burger_img}>
 				<div className={styles.edit}>
 		    		<button>Detailed view</button>
+		    		<button onClick={() => this.handleDeleteBurger(this.props.id)}>Delete burger</button>
 		    	</div>
 				<img src={require('../../images/burger.png')} alt='' />
 			</div>

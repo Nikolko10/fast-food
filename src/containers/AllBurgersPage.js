@@ -10,6 +10,7 @@ import {
 	addBurgerCard,
 	saveNameBurger,
 	deleteIngFromBurger,
+	deleteBurger,
 } from '../store/actions/dataBurgers';
 
 class AllBurgersPage extends Component {
@@ -25,6 +26,7 @@ class AllBurgersPage extends Component {
 			addBurgerCard,
 			saveNameBurger,
 			deleteIngFromBurger,
+			deleteBurger,
 		} = this.props;
         console.log(all_burgers);
 		return <div style={{'display': 'flex'}} className="App">
@@ -39,6 +41,7 @@ class AllBurgersPage extends Component {
       	    	addIngredient={addIngredient}
       	    	saveNameBurger={saveNameBurger}
       	    	deleteIngFromBurger={deleteIngFromBurger}
+      	    	deleteBurger={deleteBurger}
       	    />
       	    <Col xs={6} md={6} lg={3}>
       	      <AddBurger addBurgerCard={addBurgerCard} />
@@ -67,6 +70,7 @@ const mapDispatchToProps = dispatch => {
 		addBurgerCard: () => dispatch(addBurgerCard()),
 		saveNameBurger: (id, text) => dispatch(saveNameBurger(id, text)),
 		deleteIngFromBurger: (ingId, burId) => dispatch(deleteIngFromBurger(ingId, burId)),
+		deleteBurger: (id) => dispatch(deleteBurger(id)),
 	}
 };
 

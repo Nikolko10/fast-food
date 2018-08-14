@@ -39,6 +39,11 @@ const Burgers = (state = initialState, action) => {
       	...state,
       	all_burgers: action.payload,
       }
+    case 'DELETE_BURGER':
+      return {
+      	...state,
+      	all_burgers: action.payload,
+      }
     default:
       break;
   }
