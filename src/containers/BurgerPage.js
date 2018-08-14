@@ -1,6 +1,6 @@
 import React, { Fragment, Component } from 'react';
 import { connect } from 'react-redux';
-import Burger from '../components/Burger/Burger';
+import Burger from '../components/blocks/Burger/Burger';
 import { Grid, Row, Col, Clearfix } from 'react-bootstrap';
 import { 
 	getDataBurger,
@@ -15,9 +15,7 @@ class BurgersPage extends Component {
 	render() {
 		const { name, ingredients } = this.props;
 
-		return <div style={{'display': 'flex'}}>
-      	    <Burger name={name} ingredients={ingredients} />
-      </div>
+		return <Burger name={name} ingredients={ingredients} />
 	}
 };
 

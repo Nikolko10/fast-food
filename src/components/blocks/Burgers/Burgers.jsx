@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { Grid, Row, Col, Clearfix } from 'react-bootstrap';
 import styles from './Burgers.scss';
 import Card from '../Card/Card';
+import cn from 'classnames';
 
 class Burgers extends React.Component {
 	sumPrice = (ingredients) => {
@@ -22,6 +23,9 @@ class Burgers extends React.Component {
 		} = this.props;
 
 		return <Fragment>
+			<p className={styles.name}>Burgers</p>
+			<div className={styles.burgers + ' clearix'}>
+			<Row className={cn(styles.row, 'row-vertical-indent')}>
 		    {
 		    	burgers.map((burger, i) => {
 		    		return <Col key={burger.id} lg={3}>
@@ -38,6 +42,8 @@ class Burgers extends React.Component {
 		    		</Col>
 		    	})
 		    }
+		    </Row>
+		    </div>
 		</Fragment>
 	}
 }

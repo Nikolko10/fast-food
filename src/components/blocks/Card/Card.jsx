@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Card.scss';
 import cn from 'classnames';
 import { Link } from 'react-router-dom';
+import Button from '../../common/Button/Button';
 
 class Card extends React.Component {
 	state = {
@@ -39,15 +40,15 @@ class Card extends React.Component {
 			price,
 		} = this.props;
 
-		return <div className={styles.card} id={id}>
+		return <div className={styles.card + ' grid-item'} id={id}>
 			<div className={styles.burger_img}>
 				<div className={styles.edit}>
 		    		<Link to={`/burger/${id}`}>
-		    			<button>Detailed view</button>
+		    			<Button type='button' text='Detailed view' />
 		    		</Link>
-		    		<button onClick={() => this.handleDeleteBurger(id)}>Delete burger</button>
+		    		<Button left type='button' text='Delete burger' onClick={() => this.handleDeleteBurger(id)} />
 		    	</div>
-				<img src={require('../../images/burger.png')} alt='' />
+				<img src={require('../../../images/burger.png')} alt='' />
 			</div>
 			<div className={styles.main_info}>
 				<div className={styles.name}>
@@ -55,25 +56,25 @@ class Card extends React.Component {
 					<div>{name === '' ? 
 					<div className={styles.save}>
 						<input type='text' ref={(node) => this.name = node} />
-						<button onClick={() => this.handleSave(id)}>Save</button>
+						<Button type='button' text='Save' onClick={() => this.handleSave(id)} />
 					</div> : name}</div>
 				</div>
 				<div className={styles.ingredients}>
 					<p>Ingredients: </p>
 					<div className={styles.list}>
 						{
-							ingredients !== undefined ? ingredients.map((ingredient, i) => {
+							ingredients.length !== 0 ? ingredients.map((ingredient, i) => {
 								return <div key={i} className={styles.wrapper_ingredient}>
 									<p>{ingredient.name}</p>
-									<button onClick={() => this.handleDeleteIngFromBurger(ingredient.id, id)}>Delete</button>
+									<Button type='button' text='Delete' onClick={() => this.handleDeleteIngFromBurger(ingredient.id, id)} />
 								</div>
-							}) : ''
+							}) : 'No ingredients'
 						}
 					<div className={styles.add}>
 						<div className={this.state.isAdd ? cn(styles.edding, styles.active) : styles.edding}>
 							<input type='text' ref={(node) => this.input = node} placeholder='Enter some ingredient' />
 						</div>
-						<button onClick={(e) => this.handleAdd(id)}>{this.state.isAdd ? 'Add' : 'Add some ingredient'}</button>
+						<Button type='button' text={this.state.isAdd ? 'Add' : 'Add some ingredient'} onClick={(e) => this.handleAdd(id)} />
 					</div>
 					</div>
 				</div>

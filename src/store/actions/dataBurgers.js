@@ -96,6 +96,7 @@ export const deleteBurger = (id) => (dispatch, getState) => {
     	}
     });
 
+    all_burgers.splice(index, 1);
     setData(JSON.stringify({
     	...burgers,
     	all_burgers,

@@ -12,14 +12,6 @@ class AddBurgerCard extends React.Component {
 			isAdd: !this.state.isAdd,
 		}, () => {
 			if (this.state.isAdd) return false;
-			// for (var i = 0; i < this.props.ingredients.length; i++) {
-			// 		if (this.props.ingredients[i].name === this.input.value) {
-			// 			console.log(this.props.ingredients[i].name, this.input.value);
-			// 			alert('We have not this ingredient');
-			// 			this.input.value = '';
-			// 			return false;
-			// 		}
-			// 	}
 			this.props.addIngredient(id, this.input.value);
 			this.input.value = '';
 		});

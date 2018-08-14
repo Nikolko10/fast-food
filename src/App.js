@@ -7,12 +7,10 @@ import { Switch, Route } from 'react-router-dom';
 
 class App extends Component {
   render() {
-    return <div>
-    	<Switch>
+    return <Switch>
     		<Route exact path='/' component={AllBurgersPage} />
     		<Route path='/burger/:number' component={BurgerPage} />
     	</Switch>
-    </div>
   }
 }
 

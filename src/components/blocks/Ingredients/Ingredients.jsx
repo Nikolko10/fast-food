@@ -3,11 +3,14 @@ import styles from './Ingredients.scss';
 
 class Ingredients extends React.Component {
 	render() {
+		const {
+			ingredients,
+		} = this.props;
 		return <div className={styles.ingredients_list}>
-			<p>Ingredients</p>
+			<p className={styles.name}>Ingredients</p>
 			<div className={styles.list}>
 				{
-					this.props.ingredients !== undefined ? this.props.ingredients.map((ingredient, i) => {
+					ingredients !== undefined ? ingredients.map((ingredient, i) => {
 						return <div key={i} className={styles.ingredient}>
 							<p>{ingredient.name}</p>
 							<p className={styles.price}>{ingredient.price}$</p>

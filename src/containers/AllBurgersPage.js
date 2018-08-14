@@ -1,9 +1,9 @@
 import React, { Fragment, Component } from 'react';
 import { connect } from 'react-redux';
-import Burgers from '../components/Burgers/Burgers';
-import AddBurger from '../components/AddBurger/AddBurger';
-import Ingredients from '../components/Ingredients/Ingredients';
-import { Grid, Row, Col, Clearfix } from 'react-bootstrap';
+import Burgers from '../components/blocks/Burgers/Burgers';
+import AddBurger from '../components/blocks/AddBurger/AddBurger';
+import Ingredients from '../components/blocks/Ingredients/Ingredients';
+import { Grid } from 'react-bootstrap';
 import { 
 	getDataForAll,
 	addIngredient,
@@ -28,7 +28,6 @@ class AllBurgersPage extends Component {
 			saveNameBurger,
 			deleteIngFromBurger,
 			deleteBurger,
-			history,
 		} = this.props;
 
 		return <div style={{'display': 'flex'}} className="App">
@@ -44,11 +43,8 @@ class AllBurgersPage extends Component {
       	    	saveNameBurger={saveNameBurger}
       	    	deleteIngFromBurger={deleteIngFromBurger}
       	    	deleteBurger={deleteBurger}
-      	    	history={history}
       	    />
-      	    <Col xs={6} md={6} lg={3}>
-      	      <AddBurger addBurgerCard={addBurgerCard} />
-      	    </Col>
+      	    <AddBurger addBurgerCard={addBurgerCard} />
       	  </Grid>
       	</div>
       </div>

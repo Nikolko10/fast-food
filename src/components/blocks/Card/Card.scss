@@ -4,27 +4,51 @@
 	border-radius: 8px;
 	padding-top: 0;
 	overflow: hidden;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
 	.main_info {
 		padding: 10px;
+		flex-grow: 1;
 		.name {
 			display: flex;
+			align-items: center;
+			.save {
+				width: 100%;
+				text-align: center;
+				input {
+					border-radius: 4px;
+					margin-right: 4px;
+					padding: 3px;
+					border: 1px solid black;
+					width: 70%;
+				}
+			}
 		}
 		.ingredients {
-			display: flex;
 			.list {
 				.wrapper_ingredient {
 					display: flex;
 					justify-content: space-between;
 					align-items: center;
+					margin-bottom: 5px;
 				}
 			}
 			.add {
 				.edding {
 					overflow: hidden;
 					height: 0;
-					transition: height .3s;
+					transition: height .2s;
 					&.active {
-						height: 26px;
+						height: 28px;
+						margin-bottom: 5px;
+						input {
+							border-radius: 4px;
+							margin-right: 4px;
+							padding: 3px;
+							border: 1px solid black;
+						}
 					}
 				}
 			}
@@ -48,14 +72,14 @@
 		}
 		.edit {
 			position: absolute;
-			top: -56px;
+			top: -100px;
 			width: 100%;
 			border-top-left-radius: 8px;
 			border-top-right-radius: 8px;
 			overflow: hidden;
 			text-align: center;
 			padding: 15px;
-			background: linear-gradient(to bottom, rgba(30,87,153,1) 0%,rgba(125,185,232,0) 100%);
+			background: linear-gradient(to bottom, #4c4c52 0%, rgba(125, 185, 232, 0) 100%);;
 			transition: top .3s;
 		}
 	}

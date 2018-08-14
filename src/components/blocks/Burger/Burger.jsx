@@ -13,20 +13,22 @@ class Burger extends React.Component {
 		const { name, ingredients } = this.props;
 		return name !== undefined && ingredients !== undefined ? <Fragment>
 		    <div className={styles.burger}>
-		    	<p>Name: {name}</p>
+		    	<p className={styles.name}>Name</p>
+		    	<p>{name === '' ? 'No name' : name}</p>
 		    	<div className={styles.img}>
-		    		<img src={require('../../images/burger.png')} />
+		    		<img src={require('../../../images/burger.png')} />
 		    	</div>
-		    	<div className={styles.ingredients}>
-		    		<p>INGREDIENTS</p>
+		    	<div>
+		    		<p className={styles.ingredients}>Ingredients</p>
 		    		{
-		    			ingredients.map((item, i) => {
+		    			ingredients.length !== 0 ?ingredients.map((item, i) => {
 		    				return <p key={i}>{item.name}</p>
-		    			})
+		    			}) : 'No ingredients'
 		    		}
 		    	</div>
 		    	<div className={styles.price}>
-		    		<p>Price: {this.sumPrice(ingredients)}$</p>
+		    		<p>Price</p>
+		    		<p>{this.sumPrice(ingredients)}$</p>
 		    	</div>
 		    </div>
 		</Fragment> : ''
