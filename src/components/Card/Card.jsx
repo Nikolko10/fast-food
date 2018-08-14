@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Card.scss';
 import cn from 'classnames';
+import { Link } from 'react-router-dom';
 
 class Card extends React.Component {
 	state = {
@@ -29,33 +30,42 @@ class Card extends React.Component {
 		this.props.deleteBurger(id);
 	}
 
+
 	render() {
-		return <div className={styles.card} id={this.props.id}>
+		const {
+			id,
+			name,
+			ingredients,
+			price,
+		} = this.props;
+
+		return <div className={styles.card} id={id}>
 			<div className={styles.burger_img}>
 				<div className={styles.edit}>
-		    		<button>Detailed view</button>
-		    		<button onClick={() => this.handleDeleteBurger(this.props.id)}>Delete burger</button>
+		    		<Link to={`/burger/${id}`}>
+		    			<button>Detailed view</button>
+		    		</Link>
+		    		<button onClick={() => this.handleDeleteBurger(id)}>Delete burger</button>
 		    	</div>
 				<img src={require('../../images/burger.png')} alt='' />
 			</div>
 			<div className={styles.main_info}>
 				<div className={styles.name}>
 					<p>Name: </p>
-					<div>{this.props.name === '' ? 
+					<div>{name === '' ? 
 					<div className={styles.save}>
 						<input type='text' ref={(node) => this.name = node} />
-						<button onClick={() => this.handleSave(this.props.id)}>Save</button>
-					</div> : 
-					this.props.name}</div>
+						<button onClick={() => this.handleSave(id)}>Save</button>
+					</div> : name}</div>
 				</div>
 				<div className={styles.ingredients}>
 					<p>Ingredients: </p>
 					<div className={styles.list}>
 						{
-							this.props.ingredients !== undefined ? this.props.ingredients.map((ingredient, i) => {
+							ingredients !== undefined ? ingredients.map((ingredient, i) => {
 								return <div key={i} className={styles.wrapper_ingredient}>
 									<p>{ingredient.name}</p>
-									<button onClick={() => this.handleDeleteIngFromBurger(ingredient.id, this.props.id)}>Delete</button>
+									<button onClick={() => this.handleDeleteIngFromBurger(ingredient.id, id)}>Delete</button>
 								</div>
 							}) : ''
 						}
@@ -63,14 +73,14 @@ class Card extends React.Component {
 						<div className={this.state.isAdd ? cn(styles.edding, styles.active) : styles.edding}>
 							<input type='text' ref={(node) => this.input = node} placeholder='Enter some ingredient' />
 						</div>
-						<button onClick={(e) => this.handleAdd(this.props.id)}>{this.state.isAdd ? 'Add' : 'Add some ingredient'}</button>
+						<button onClick={(e) => this.handleAdd(id)}>{this.state.isAdd ? 'Add' : 'Add some ingredient'}</button>
 					</div>
 					</div>
 				</div>
 			</div>
 			<div className={styles.price}>
 				<p>Prise: </p>
-				<p>{this.props.price}$</p>
+				<p>{price}$</p>
 			</div>
 		</div>
 	}

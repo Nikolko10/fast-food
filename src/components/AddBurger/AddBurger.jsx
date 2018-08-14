@@ -6,7 +6,6 @@ import Card from '../Card/Card';
 class AddBurger extends React.Component {
 
 	handleAdd = () => {
-		console.log('add');
 		this.props.addBurgerCard();
 	}
 

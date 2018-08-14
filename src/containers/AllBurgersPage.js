@@ -11,6 +11,7 @@ import {
 	saveNameBurger,
 	deleteIngFromBurger,
 	deleteBurger,
+	getBurger,
 } from '../store/actions/dataBurgers';
 
 class AllBurgersPage extends Component {
@@ -27,8 +28,9 @@ class AllBurgersPage extends Component {
 			saveNameBurger,
 			deleteIngFromBurger,
 			deleteBurger,
+			history,
 		} = this.props;
-        console.log(all_burgers);
+
 		return <div style={{'display': 'flex'}} className="App">
         <div style={{'width': '20%'}}>
           <Ingredients ingredients={ingredients} />
@@ -42,6 +44,7 @@ class AllBurgersPage extends Component {
       	    	saveNameBurger={saveNameBurger}
       	    	deleteIngFromBurger={deleteIngFromBurger}
       	    	deleteBurger={deleteBurger}
+      	    	history={history}
       	    />
       	    <Col xs={6} md={6} lg={3}>
       	      <AddBurger addBurgerCard={addBurgerCard} />

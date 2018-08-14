@@ -89,7 +89,6 @@ export const deleteBurger = (id) => (dispatch, getState) => {
 	var index = 0;
 	var all_burgers = burgers.all_burgers.filter((item, i, arr) => {
     	if (id === item.id) {
-            console.log(i);
             index = i;
     		return item;
     	} else {
@@ -97,7 +96,6 @@ export const deleteBurger = (id) => (dispatch, getState) => {
     	}
     });
 
-    console.log(all_burgers.splice(index, 1));
     setData(JSON.stringify({
     	...burgers,
     	all_burgers,

@@ -13,19 +13,27 @@ class Burgers extends React.Component {
 	}
 
 	render() {
+		const {
+			burgers,
+			addIngredient,
+			saveNameBurger,
+			deleteIngFromBurger,
+			deleteBurger,
+		} = this.props;
+
 		return <Fragment>
 		    {
-		    	this.props.burgers.map((burger, i) => {
+		    	burgers.map((burger, i) => {
 		    		return <Col key={burger.id} lg={3}>
 		    			<Card 
 		    				name={burger.name} 
 		    				ingredients={burger.ingredients} 
 		    				price={this.sumPrice(burger.ingredients)}
 		    				id={burger.id}
-		    				addIngredient={this.props.addIngredient}
-		    				saveNameBurger={this.props.saveNameBurger}
-		    				deleteIngFromBurger={this.props.deleteIngFromBurger}
-		    				deleteBurger={this.props.deleteBurger}
+		    				addIngredient={addIngredient}
+		    				saveNameBurger={saveNameBurger}
+		    				deleteIngFromBurger={deleteIngFromBurger}
+		    				deleteBurger={deleteBurger}
 		    			/>
 		    		</Col>
 		    	})

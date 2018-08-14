@@ -1,5 +1,3 @@
-import { setData } from '../../utils/data.js';
-
 var initialState = {
 	ingredients: [],
 	all_burgers: [
