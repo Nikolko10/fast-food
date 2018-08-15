@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Grid, Row, Col, Clearfix } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import styles from './Burgers.scss';
 import Card from '../Card/Card';
 import cn from 'classnames';
@@ -11,8 +11,8 @@ const Burgers = ({ burgers, addIngredient, saveNameBurger, deleteIngFromBurger, 
 		<div className={styles.burgers + ' clearix'}>
 			<Row className={cn(styles.row, 'row-vertical-indent')}>
 	    		{
-	    			burgers.map((burger, i) => {
-	    				return <Col key={burger.id} lg={3}>
+	    			burgers.length !== 0 ? burgers.map((burger, i) => {
+	    				return <Col key={burger.id} lg={3} md={4} sm={6} xs={12}>
 	    					<Card 
 	    						name={burger.name} 
 	    						ingredients={burger.ingredients} 
@@ -24,7 +24,7 @@ const Burgers = ({ burgers, addIngredient, saveNameBurger, deleteIngFromBurger, 
 	    						deleteBurger={deleteBurger}
 	    					/>
 	    				</Col>
-	    			})
+	    			}) : <div className={styles.empty}>Data empty</div>
 	    		}
 	    	</Row>
 	    </div>

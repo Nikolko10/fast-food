@@ -8,9 +8,13 @@
 	.list {
 		max-width: 250px;
 		margin: 0 auto;
+		padding: 10px;
+		border-radius: 4px;
+		background-color: rgba(0, 0, 0, .6);
 		.ingredient {
 			display: flex;
 			justify-content: space-between;
+			color: white;
 		}
 		p {
 			text-align: left;

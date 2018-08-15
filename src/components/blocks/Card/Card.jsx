@@ -44,9 +44,9 @@ class Card extends React.Component {
 			<div className={styles.burger_img}>
 				<div className={styles.edit}>
 		    		<Link to={`/burger/${id}`}>
-		    			<Button type='button' text='Detailed view' />
+		    			<Button radius_r type='button' text='Detailed view' />
 		    		</Link>
-		    		<Button left type='button' text='Delete burger' onClick={() => this.handleDeleteBurger(id)} />
+		    		<Button radius_l type='button' text='Delete burger' onClick={() => this.handleDeleteBurger(id)} />
 		    	</div>
 				<img src={require('../../../images/burger.png')} alt='' />
 			</div>

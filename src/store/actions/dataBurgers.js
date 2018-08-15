@@ -13,6 +13,7 @@ export const addIngredient = (id, text) => (dispatch, getState) => {
     		return burgers.ingredients.filter(ingredient => {
     			if (text === ingredient.name) {
     				item.ingredients.push({name: text, price: ingredient.price});
+                    return ingredient;
     			}
     		})
     		return item;
@@ -66,6 +67,7 @@ export const deleteIngFromBurger = (ingId, burId) => (dispatch, getState) => {
     		return item.ingredients.filter((ingredient, i) => {
     			if (ingredient.id === ingId) {
     				item.ingredients.splice(i, 1);
+                    return ingredient;
     			} else {
     				return ingredient;
     			}

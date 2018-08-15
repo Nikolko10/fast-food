@@ -2,12 +2,13 @@ import React from 'react';
 import styles from './Button.scss';
 import cn from 'classnames';
 
-const Button = ({ type, text, onClick, left }) => {
+const Button = ({ type, text, onClick, radius_r, radius_l }) => {
 	return <button 
 		className={
 			cn(
 				styles.button,
-				left ? styles.left : ''
+				radius_r ? styles.radius_r : '',
+				radius_l ? styles.radius_l : ''
 			)
 		} 
 		type={type}

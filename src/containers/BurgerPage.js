@@ -1,7 +1,6 @@
-import React, { Fragment, Component } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Burger from '../components/blocks/Burger/Burger';
-import { Grid, Row, Col, Clearfix } from 'react-bootstrap';
 import { 
 	getDataBurger,
 } from '../store/actions/dataBurger';

@@ -8,19 +8,19 @@ var data = {
 			price: 10,
 		},{
 			name: 'cabbage',
-			price: 20,
+			price: 2,
 		},
 		{
 			name: 'tomato',
-			price: 1,
-		},
-		{
-			name: 'cucumber',
 			price: 3,
 		},
 		{
+			name: 'cucumber',
+			price: 5,
+		},
+		{
 			name: 'bow',
-			price: 6,
+			price: 3,
 		}
 	],
 	all_burgers: [
@@ -33,7 +33,7 @@ var data = {
 				id: uniqid(),
 			},{
 				name: 'cabbage',
-				price: 20,
+				price: 2,
 				id: uniqid(),
 			}],
 		},
@@ -46,11 +46,11 @@ var data = {
 				id: uniqid(),
 			},{
 				name: 'cabbage',
-				price: 20,
+				price: 2,
 				id: uniqid(),
 			},{
 				name: 'cucumber',
-				price: 3,
+				price: 5,
 				id: uniqid(),
 			}],
 		},

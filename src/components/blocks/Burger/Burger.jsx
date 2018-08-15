@@ -3,12 +3,12 @@ import styles from './Burger.scss';
 import { sumPrice } from '../../../utils/helperPrice.js';
 
 const Burger = ({ name, ingredients }) => {
-	return name !== undefined && ingredients !== undefined ? <Fragment>
+	return <Fragment>
 	    <div className={styles.burger}>
 	    	<p className={styles.name}>Name</p>
 	    	<p>{name === '' ? 'No name' : name}</p>
 	    	<div className={styles.img}>
-	    		<img src={require('../../../images/burger.png')} />
+	    		<img src={require('../../../images/burger.png')} alt='' />
 	    	</div>
 	    	<div>
 	    		<p className={styles.ingredients}>Ingredients</p>
@@ -23,7 +23,7 @@ const Burger = ({ name, ingredients }) => {
 	    		<p>{sumPrice(ingredients)}$</p>
 	    	</div>
 	    </div>
-	</Fragment> : ''
+	</Fragment>
 }
 
 export default Burger;

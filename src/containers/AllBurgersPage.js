@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Burgers from '../components/blocks/Burgers/Burgers';
 import AddBurger from '../components/blocks/AddBurger/AddBurger';
@@ -11,7 +11,6 @@ import {
 	saveNameBurger,
 	deleteIngFromBurger,
 	deleteBurger,
-	getBurger,
 } from '../store/actions/dataBurgers';
 
 class AllBurgersPage extends Component {
@@ -30,11 +29,11 @@ class AllBurgersPage extends Component {
 			deleteBurger,
 		} = this.props;
 
-		return <div style={{'display': 'flex'}} className="App">
-        <div style={{'width': '20%'}}>
+		return ingredients.length !== 0 ? <div style={{'display': 'flex'}} className="App">
+        <div style={{'width': '30%'}}>
           <Ingredients ingredients={ingredients} />
         </div>
-      	<div style={{'width': '80%'}}>
+      	<div style={{'width': '70%'}}>
       	  <Grid fluid>
       	    <Burgers 
       	    	burgers={all_burgers} 
@@ -47,7 +46,7 @@ class AllBurgersPage extends Component {
       	    <AddBurger addBurgerCard={addBurgerCard} />
       	  </Grid>
       	</div>
-      </div>
+      </div> : <div className='loader'>Loading...</div>
 	}
 };
 

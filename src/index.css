@@ -17,11 +17,3 @@ a,
 a:hover {
 	color: black;
 }
-
-.wrapper_burgers {
-	display: flex;
-}
-
-#root {
-	height: 100%;
-}
