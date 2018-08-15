@@ -47,9 +47,8 @@ export const saveNameBurger = (id, text) => (dispatch, getState) => {
     	if (id === item.id) {
     		item.name = text;
     		return item;
-    	} else {
-    		return item;
-    	}
+    	};
+        return item;
     });
 
     setData(JSON.stringify({
@@ -68,9 +67,8 @@ export const deleteIngFromBurger = (ingId, burId) => (dispatch, getState) => {
     			if (ingredient.id === ingId) {
     				item.ingredients.splice(i, 1);
                     return ingredient;
-    			} else {
-    				return ingredient;
-    			}
+    			};
+                return ingredient;
     		})
     		return item;
     	} else {
@@ -93,9 +91,8 @@ export const deleteBurger = (id) => (dispatch, getState) => {
     	if (id === item.id) {
             index = i;
     		return item;
-    	} else {
-    		return item;
-    	}
+    	};
+        return item;
     });
 
     all_burgers.splice(index, 1);

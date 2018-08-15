@@ -9,7 +9,7 @@ var initialState = {
   ]
 };
 
-const Burger = (state = initialState, action) => {
+const burger = (state = initialState, action) => {
   switch (action.type) {
     case 'GET_DATA_BURGER':
       return action.payload
@@ -19,4 +19,4 @@ const Burger = (state = initialState, action) => {
   return state;
 }
 
-export default Burger;
+export default burger;

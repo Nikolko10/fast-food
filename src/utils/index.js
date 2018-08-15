@@ -21,6 +21,14 @@ var data = {
 		{
 			name: 'bow',
 			price: 3,
+		},
+		{
+			name: 'egg',
+			price: 1
+		},
+		{
+			name: 'cheese',
+			price: 9,
 		}
 	],
 	all_burgers: [

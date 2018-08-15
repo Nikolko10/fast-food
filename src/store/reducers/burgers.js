@@ -12,7 +12,7 @@ var initialState = {
 	],
 };
 
-const Burgers = (state = initialState, action) => {
+const burgers = (state = initialState, action) => {
   switch (action.type) {
     case 'GET_DATA':
       return {
@@ -48,4 +48,4 @@ const Burgers = (state = initialState, action) => {
   return state;
 }
 
-export default Burgers;
+export default burgers;
