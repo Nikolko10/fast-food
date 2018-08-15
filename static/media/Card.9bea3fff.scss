@@ -1,0 +1,87 @@
+.card {
+	color: black;
+	border: 1px solid black;
+	border-radius: 8px;
+	padding-top: 0;
+	overflow: hidden;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	.main_info {
+		padding: 10px;
+		flex-grow: 1;
+		.name {
+			display: flex;
+			align-items: center;
+			.save {
+				width: 100%;
+				text-align: center;
+				input {
+					border-radius: 4px;
+					margin-right: 4px;
+					padding: 3px;
+					border: 1px solid black;
+					width: 56%;
+				}
+			}
+		}
+		.ingredients {
+			.list {
+				.wrapper_ingredient {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					margin-bottom: 5px;
+				}
+			}
+			.add {
+				.edding {
+					overflow: hidden;
+					height: 0;
+					transition: height .2s;
+					&.active {
+						height: 28px;
+						margin-bottom: 5px;
+						input {
+							border-radius: 4px;
+							margin-right: 4px;
+							padding: 3px;
+							border: 1px solid black;
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+	.price {
+		padding: 10px;
+		display: flex;
+	}
+	.burger_img {
+		position: relative;
+		padding-top: 10px;
+		overflow: hidden;
+		img {
+			width: 100%;
+		}
+		&:hover {
+			.edit {
+				top: 0;
+		    }
+		}
+		.edit {
+			position: absolute;
+			top: -100px;
+			width: 100%;
+			border-top-left-radius: 8px;
+			border-top-right-radius: 8px;
+			overflow: hidden;
+			text-align: center;
+			padding: 15px;
+			background: linear-gradient(to bottom, #4c4c52 0%, rgba(125, 185, 232, 0) 100%);;
+			transition: top .3s;
+		}
+	}
+}

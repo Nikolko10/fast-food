@@ -1,0 +1,21 @@
+.burger {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	height: 100%;
+	justify-content: center;
+	width: 100%;
+}
+
+.ingredients,
+.name {
+	font-size: 18px;
+	text-transform: uppercase;
+}
+
+.price {
+	p:first-child {
+		text-transform: uppercase;
+		font-size: 18px;
+	}
+}
