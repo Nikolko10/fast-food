@@ -15,11 +15,10 @@ export const addIngredient = (id, text) => (dispatch, getState) => {
     				item.ingredients.push({name: text, price: ingredient.price});
                     return ingredient;
     			}
+                return ingredient;
     		})
-    		return item;
-    	} else {
-    		return item;
     	}
+        return item;
     });
     setData(JSON.stringify({
     	...burgers,
@@ -70,10 +69,8 @@ export const deleteIngFromBurger = (ingId, burId) => (dispatch, getState) => {
     			};
                 return ingredient;
     		})
-    		return item;
-    	} else {
-    		return item;
     	}
+        return item;
     });
 
     setData(JSON.stringify({

@@ -46,7 +46,7 @@ class AllBurgersPage extends Component {
       	    <AddBurger addBurgerCard={addBurgerCard} />
       	  </Grid>
       	</div>
-      </div> : <div className='loader'>Loading...</div>
+      </div> : <div className='loader'><img src={require('../images/Loading.gif')} alt=''/></div>
 	}
 };
 

@@ -4,6 +4,7 @@ import styles from './Burgers.scss';
 import Card from '../Card/Card';
 import cn from 'classnames';
 import { sumPrice } from '../../../utils/helperPrice.js';
+import '../../../styles/scss/grid-interval.scss';
 
 const Burgers = ({ burgers, addIngredient, saveNameBurger, deleteIngFromBurger, deleteBurger }) => {
 	return <Fragment>
